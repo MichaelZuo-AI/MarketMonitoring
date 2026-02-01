@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* 
+  Tailwind v4 Import. 
+  Body styles are handled in App.jsx or via standard CSS if needed.
+*/
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
