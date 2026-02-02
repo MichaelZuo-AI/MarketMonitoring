@@ -18,17 +18,25 @@ except ValueError as e:
 
 class SummarizeRequest(BaseModel):
     text: str
+    language: str = "English"
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the World News Summarizer API"}
 
 @app.get("/api/news")
-def get_news():
-    return feed_service.fetch_all()
+@app.get("/api/news")
+def get_news(category: str = "All", language: str = "English"):
+    return feed_service.fetch_all(category, language, gemini_service)
 
 @app.post("/api/summarize")
 def summarize_article(request: SummarizeRequest):
     if not gemini_service:
         raise HTTPException(status_code=500, detail="Gemini Service not configured")
-    return {"summary": gemini_service.summarize(request.text)}
+    return {"summary": gemini_service.summarize(request.text, request.language)}
+
+@app.get("/api/config")
+def get_config():
+    if not gemini_service:
+        return {"model": "Unknown"}
+    return {"model": gemini_service.get_model_name()}
