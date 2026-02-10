@@ -19,15 +19,26 @@ npm run briefing   # Fetch news + stock, save markdown to briefings/
 
 ## Daily Workflow
 
+### Step 1: Fetch data
 ```bash
 npm run briefing
-# Then in Claude Code:
-# "Read the latest briefing and analyze, generate both personal and public versions"
 ```
 
-This generates two HTML files in `briefings/`:
-- `*-personal.html` — RSU tranche analysis, sell/hold recs, tax strategy (private)
-- `*-public.html` — Coupang news + stock forecast (shareable with coworkers)
+### Step 2: Generate reports
+In Claude Code, say:
+```
+Read briefings/<today's file>.md and analyze my RSU position
+```
+Claude Code generates two HTML files in `briefings/`:
+- `*-personal.html` — RSU tranche analysis, sell/hold recs, tax strategy (private, Chinese)
+- `*-public.html` — Coupang news + stock forecast (shareable, Chinese, no RSU data)
+
+### Step 3: Publish to GitHub Pages
+Claude Code copies the public HTML to `site/index.html`, then:
+```bash
+git add site/index.html && git commit -m "update public briefing" && git push
+```
+Auto-deploys to: https://michaelzuo-ai.github.io/MarketMonitoring/
 
 ## Architecture
 
