@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**CPNG RSU Monitor** — A Next.js 15 app for monitoring Coupang (CPNG) stock and news with AI-powered RSU strategy analysis. Uses a 3-agent architecture (Sourcing, Brain, Chat) powered by the Claude API.
+**CPNG RSU Monitor** — A Next.js 15 app for monitoring Coupang (CPNG) stock and news relevant to your RSU position. Fetches live news via RSS, validates freshness, and generates a markdown prompt you can paste into Claude for AI-powered analysis.
 
 ## Commands
 
@@ -13,37 +13,32 @@ npm install        # Install dependencies
 npm run dev        # Start dev server (port 3000)
 npm run build      # Production build
 npm run lint       # ESLint
+npm test           # Run vitest
 npm start          # Start production server
 ```
 
-### No test suite exists yet
-Would use `vitest` for testing.
-
 ## Architecture
 
-**Stack:** Next.js 15 + TypeScript + Tailwind CSS v4 + Claude API (Anthropic SDK)
+**Stack:** Next.js 15 + TypeScript + Tailwind CSS v4
 
-### 3-Agent System
-1. **Sourcing Agent** (`/api/news`) — Fetches RSS feeds, validates freshness (<48h), deduplicates, categorizes (coupang/market/tech)
-2. **Brain Agent** (`/api/analyze`, `/api/briefing`) — Analyzes articles against RSU position, gives sentiment + recommendation (hold/sell/accumulate)
-3. **Chat Agent** (`/api/chat`) — Interactive streaming chat with full context of RSU position + news + analysis
+### Workflow
+1. **Sourcing Agent** fetches RSS feeds, validates freshness (<48h), deduplicates
+2. **Export Panel** generates a markdown prompt with RSU context + stock price + articles
+3. **You** paste the prompt into claude.ai or Claude Code for analysis
 
 ### Key Files
-- `src/lib/types.ts` — All TypeScript interfaces
+- `src/lib/types.ts` — TypeScript interfaces (Article, StockQuote, CategoryFilter)
 - `src/lib/rsu-profile.ts` — Hardcoded RSU position data + employee tax profile
-- `src/lib/feeds.ts` — RSS fetching + freshness validation
-- `src/lib/stock.ts` — Yahoo Finance wrapper (CPNG quote, 60s cache)
-- `src/lib/claude.ts` — Anthropic SDK wrapper with 3 prompt profiles
+- `src/lib/feeds.ts` — RSS fetching + freshness validation + deduplication
+- `src/lib/stock.ts` — Yahoo Finance CPNG quote (60s cache)
+- `src/lib/export.ts` — Generates markdown prompt for Claude
 - `src/components/Dashboard.tsx` — Main client orchestrator
-- `src/app/api/` — 5 route handlers (news, stock, analyze, briefing, chat)
+- `src/components/ExportPanel.tsx` — Copy/download prompt for Claude
 
 ### API Routes
-- `GET /api/news?category=` — Fetch + filter articles
-- `GET /api/stock` — CPNG quote (cached 60s)
-- `POST /api/analyze` `{title, snippet, source, category}` — Single article analysis
-- `POST /api/briefing` `{articles[]}` — Portfolio-level briefing
-- `POST /api/chat` `{messages[], newsContext, analysisContext}` — Streaming chat
+- `GET /api/news?category=` — Fetch + filter articles from RSS feeds
+- `GET /api/stock` — CPNG quote (cached 60s via Yahoo Finance)
 
 ## Environment
 
-Requires `ANTHROPIC_API_KEY` in `.env.local`.
+No API keys required. All data sources (RSS feeds, Yahoo Finance) are free and unauthenticated.

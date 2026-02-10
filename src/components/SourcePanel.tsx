@@ -12,8 +12,6 @@ interface SourcePanelProps {
   category: CategoryFilterType;
   onCategoryChange: (category: CategoryFilterType) => void;
   onRefresh: () => void;
-  onAnalyze: (article: Article) => void;
-  analyzingId: string | null;
 }
 
 export default function SourcePanel({
@@ -22,8 +20,6 @@ export default function SourcePanel({
   category,
   onCategoryChange,
   onRefresh,
-  onAnalyze,
-  analyzingId,
 }: SourcePanelProps) {
   return (
     <section className="glass-card p-5">
@@ -54,12 +50,7 @@ export default function SourcePanel({
       ) : (
         <div className="space-y-2 max-h-[600px] overflow-y-auto pr-1">
           {articles.map((article) => (
-            <NewsCard
-              key={article.id}
-              article={article}
-              onAnalyze={onAnalyze}
-              analyzing={analyzingId === article.id}
-            />
+            <NewsCard key={article.id} article={article} />
           ))}
         </div>
       )}

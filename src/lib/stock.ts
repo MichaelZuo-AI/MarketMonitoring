@@ -11,8 +11,8 @@ export async function getCPNGQuote(): Promise<StockQuote> {
   }
 
   try {
-    const yahooFinance = await import("yahoo-finance2");
-    const yf = yahooFinance.default;
+    const { default: YahooFinance } = await import("yahoo-finance2");
+    const yf = new YahooFinance({ suppressNotices: ["yahooSurvey"] });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const quote: any = await yf.quote("CPNG");
 

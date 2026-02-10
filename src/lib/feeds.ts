@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import Parser from "rss-parser";
 import type { Article } from "./types";
 
@@ -110,7 +111,7 @@ async function fetchFeed(source: FeedSource): Promise<Article[]> {
       if (ageHours > MAX_AGE_HOURS) continue;
 
       articles.push({
-        id: Buffer.from(item.link).toString("base64url").slice(0, 32),
+        id: createHash("sha256").update(item.link).digest("hex").slice(0, 16),
         title: item.title,
         link: item.link,
         snippet: item.contentSnippet?.slice(0, 300) || item.content?.slice(0, 300) || "",
