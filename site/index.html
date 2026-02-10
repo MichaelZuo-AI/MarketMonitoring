@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coupang (CPNG) 每日简报 — 2026-02-10</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --red: #f87171;
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --orange: #fb923c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 1.5rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; color: var(--yellow); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  p { margin-bottom: 0.75rem; }
+  .header-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1rem 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .price { font-size: 1.5rem; font-weight: 700; }
+  .price .up { color: var(--green); }
+  .meta { color: var(--muted); font-size: 0.85rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+  }
+  .card.bearish { border-left: 4px solid var(--red); }
+  .card.bullish { border-left: 4px solid var(--green); }
+  .card.neutral { border-left: 4px solid var(--yellow); }
+  .card.warn { border-left: 4px solid var(--orange); }
+  .tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: 4px; margin-right: 0.4rem;
+  }
+  .tag.bearish { background: rgba(248,113,113,0.2); color: var(--red); }
+  .tag.bullish { background: rgba(74,222,128,0.2); color: var(--green); }
+  .tag.neutral { background: rgba(251,191,36,0.2); color: var(--yellow); }
+  ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border); }
+  td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: rgba(56,189,248,0.05); }
+  .scenario-box {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+  }
+  .scenario-box.bull { border-left: 4px solid var(--green); }
+  .scenario-box.base { border-left: 4px solid var(--yellow); }
+  .scenario-box.bear { border-left: 4px solid var(--red); }
+  .scenario-box h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .scenario-box.bull h4 { color: var(--green); }
+  .scenario-box.base h4 { color: var(--yellow); }
+  .scenario-box.bear h4 { color: var(--red); }
+  .risk-item { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-num {
+    background: var(--orange); color: var(--bg); font-weight: 700; font-size: 0.8rem;
+    width: 1.5rem; height: 1.5rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.15rem;
+  }
+  .outlook {
+    background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(251,191,36,0.1));
+    border: 1px solid var(--accent); border-radius: 12px;
+    padding: 1.5rem; margin-top: 1rem; font-size: 1.05rem; line-height: 1.8;
+  }
+  strong { color: #fff; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<h1>Coupang (CPNG) 每日简报</h1>
+
+<div class="header-bar">
+  <div>
+    <div class="price">CPNG <span class="up">$18.54</span> <span class="up" style="font-size:1rem">+0.82 (+4.63%)</span></div>
+    <div class="meta">Pre-Market &middot; Volume 30.6M &middot; NYSE: CPNG</div>
+  </div>
+  <div style="text-align:right">
+    <div class="meta">2026-02-10</div>
+    <div class="meta">KOSPI 5,298 (周一 +4.1%)</div>
+  </div>
+</div>
+
+<h2>今日重大新闻</h2>
+
+<h3>数据泄露调查 — 核心事件</h3>
+
+<div class="card bearish">
+  <span class="tag bearish">强烈看跌</span>
+  <strong>政府确认 3,367 万账户泄露 — 韩国史上最严重</strong>
+  <p>联合调查确认泄露规模远超 Coupang 最初声称。泄露内容包括<strong>订单历史和门禁密码</strong>，不仅仅是基本个人信息。配送地址记录被查看高达 <strong>1.4 亿次</strong>，显示数据被系统性滥用。</p>
+  <p style="color:var(--muted);font-size:0.85rem">来源: Yonhap, Bloomberg, Korea Herald, Straits Times, Korea Times</p>
+</div>
+
+<div class="card bearish">
+  <span class="tag bearish">强烈看跌</span>
+  <strong>Coupang 被指阻碍调查，临时 CEO 涉嫌伪证</strong>
+  <p>Bloomberg 报道科学技术部称 Coupang 员工阻碍调查进程。Hagens Berman 披露临时 CEO 正因涉嫌向韩国国会提供虚假证词被调查。这将极大加剧监管机构的敌对态度，可能导致更严厉的处罚。</p>
+  <p style="color:var(--muted);font-size:0.85rem">来源: Bloomberg, Hagens Berman, Tech in Asia</p>
+</div>
+
+<div class="card bearish">
+  <span class="tag bearish">看跌</span>
+  <strong>Coupang 公开反驳调查结论，称"遗漏重要事实"</strong>
+  <p>Coupang 母公司于 2 月 10 日公开声明抗议，称调查报告遗漏了重要事实。高风险策略 — 若失败将进一步激怒监管者。</p>
+  <p style="color:var(--muted);font-size:0.85rem">来源: Korea JoongAng Daily, 매일경제</p>
+</div>
+
+<h3>分析师评级与诉讼</h3>
+
+<div class="card bearish">
+  <span class="tag bearish">看跌</span>
+  <strong>Bernstein 首次覆盖：Underperform，目标价 $17（低于现价 8%）</strong>
+  <p>Bernstein 以"跑输大市"评级启动覆盖，目标价 $17，暗示约 8% 的下行空间。这是一个有分量的看空信号。</p>
+</div>
+
+<div class="card neutral">
+  <span class="tag neutral">中性偏正面</span>
+  <strong>Citi 启动覆盖 Buy 评级，但目标价下调至 $24</strong>
+  <p>$24 目标价意味着约 30% 上行空间，但方向是下调。买入评级提供了一定机构信心支撑，但下调方向反映数据泄露的负面影响。分析师意见分歧（Citi 看多 vs Bernstein 看空）增加了不确定性。</p>
+</div>
+
+<div class="card bearish">
+  <span class="tag bearish">看跌</span>
+  <strong>多起股东集体诉讼 — Lead Plaintiff 截止日 2 月 17 日</strong>
+  <p>Rosen、Bronstein Gewirtz、Berger Montague、Portnoy 等至少 4 家律所发起集体诉讼。截止日下周二（2/17）。密集程度反映了投资者损失的严重性。</p>
+</div>
+
+<h3>业务与竞争</h3>
+
+<div class="card bearish">
+  <span class="tag bearish">看跌</span>
+  <strong>韩国取消大型超市凌晨配送禁令（14 年来首次）</strong>
+  <p>E-mart、Lotte Mart、Homeplus 等大型超市将可以恢复夜间配送，<strong>直接挑战 Coupang 火箭配送的差异化优势</strong>。这削弱了 Coupang 的监管护城河，短期是明确利空。虽然 Coupang 全国物流基础设施优势长期难以复制，但竞争格局短期明显恶化。</p>
+</div>
+
+<div class="card bearish">
+  <span class="tag bearish">轻微看跌</span>
+  <strong>Kurly 推出午夜配送挑战 Coupang 速度优势</strong>
+  <p>竞争对手在配送时效上进一步追赶。Kurly 午夜配送直接对标火箭配送，虽规模有限但加剧了竞争叙事。</p>
+</div>
+
+<div class="card neutral">
+  <span class="tag neutral">中性</span>
+  <strong>Coupang 在华盛顿积极游说，建立政治关系</strong>
+  <p>Politico 和 Hankyoreh 均有深度报道。地缘政治层面提供一定保护，但也加深了"到底是韩国公司还是美国公司"的身份争议。</p>
+</div>
+
+<h3>宏观市场</h3>
+
+<div class="card bullish">
+  <span class="tag bullish">正面</span>
+  <strong>KOSPI 周一涨 4.1% 至 5,298，周二持平</strong>
+  <ul>
+    <li>Samsung HBM4 量产推动韩国科技股大涨</li>
+    <li>SK Hynix 即将向 Nvidia 供应 HBM4</li>
+    <li>SK 会长与黄仁勋会面讨论 AI 芯片合作</li>
+    <li>中国高净值投资者称韩国股票"难以置信地便宜"</li>
+    <li>券商上调 KOSPI 目标至 7,000 点</li>
+    <li>韩国 ETF 位列全球基金净流入前列</li>
+  </ul>
+  <p>强势的韩国市场为 CPNG 提供了估值支撑，否则在如此多利空新闻下股价本应更弱。</p>
+</div>
+
+<h2>股价前瞻</h2>
+
+<table>
+  <thead><tr><th>指标</th><th>状态</th><th>对股价影响</th></tr></thead>
+  <tbody>
+    <tr><td>数据泄露（3,367万账户）</td><td style="color:var(--red)">严重恶化</td><td style="color:var(--red)">短期重大压力</td></tr>
+    <tr><td>阻碍调查 + CEO 伪证</td><td style="color:var(--red)">极其恶劣</td><td style="color:var(--red)">可能加重处罚</td></tr>
+    <tr><td>PIPC 罚款</td><td style="color:var(--orange)">待定</td><td style="color:var(--red)">可能数百亿韩元</td></tr>
+    <tr><td>集体诉讼（截止 2/17）</td><td style="color:var(--orange)">进行中</td><td style="color:var(--red)">增加不确定性</td></tr>
+    <tr><td>Bernstein Underperform</td><td style="color:var(--red)">$17 目标价</td><td style="color:var(--red)">下行 8%</td></tr>
+    <tr><td>Citi Buy</td><td style="color:var(--green)">$24 目标价</td><td style="color:var(--green)">上行 30%</td></tr>
+    <tr><td>凌晨配送禁令解除</td><td style="color:var(--red)">竞争加剧</td><td style="color:var(--red)">削弱配送护城河</td></tr>
+    <tr><td>KOSPI 强势</td><td style="color:var(--green)">5,298 (+4.1%)</td><td style="color:var(--green)">估值支撑</td></tr>
+    <tr><td>核心业务</td><td style="color:var(--muted)">未受直接影响</td><td style="color:var(--muted)">电商基本面依然健康</td></tr>
+  </tbody>
+</table>
+
+<h3>情景分析（1-3 个月）</h3>
+
+<div class="scenario-box bull">
+  <h4>乐观情景 — $22-24（+20~30%） · 概率 ~20%</h4>
+  <p>PIPC 罚款可控（<100 亿韩元），Coupang 成功反驳部分结论，集体诉讼和解金额低。KOSPI 继续走强带动估值修复。Q4 财报显示业务未受实质影响。</p>
+</div>
+
+<div class="scenario-box base">
+  <h4>基准情景 — $16-20（震荡） · 概率 ~50%</h4>
+  <p>PIPC 开出大额罚款但不至于致命。数据泄露负面影响持续但逐步消化。韩国市场整体支撑使 CPNG 不至于大跌。集体诉讼在背景中推进。</p>
+</div>
+
+<div class="scenario-box bear">
+  <h4>悲观情景 — $12-15（-20~35%） · 概率 ~30%</h4>
+  <p>CEO 伪证成立引发管理层危机。创纪录罚款。集体诉讼扩大。用户流失加速至 Naver/Kurly/SSG。凌晨配送开放后传统零售商加速追赶。</p>
+</div>
+
+<h2>本周关键时间节点</h2>
+
+<div class="card warn">
+  <div class="risk-item">
+    <div class="risk-num">1</div>
+    <div><strong>2 月 17 日（周二）</strong>— 集体诉讼 Lead Plaintiff 截止日，可能引发新一轮负面报道</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-num">2</div>
+    <div><strong>PIPC 罚款公告</strong>— 调查已完成，正式罚款可能数周内公布</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-num">3</div>
+    <div><strong>CEO 伪证调查进展</strong>— 若正式起诉将严重打击管理层信誉</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-num">4</div>
+    <div><strong>美国 CPI 数据</strong>— 影响美股整体走势和韩元汇率</div>
+  </div>
+</div>
+
+<h2>总结</h2>
+
+<div class="outlook">
+  Coupang 正面临<strong>公司历史上最严峻的信任危机</strong>：3,367 万账户泄露、阻碍调查指控、CEO 涉嫌伪证、Bernstein 看空、凌晨配送禁令解除。尽管股价在 KOSPI 强势带动下逆势涨 4.63%（受 Citi Buy 评级提振），公司特定风险正在快速积累。<br><br>
+  <strong>短期（1-4 周）：</strong>围绕诉讼截止和罚款公告，波动加大偏空。<br>
+  <strong>中期（1-3 个月）：</strong>取决于罚款金额和 Q4 财报，若业务基本面未受实质影响，$16-20 区间可能成为底部。<br>
+  <strong>长期：</strong>Coupang 韩国电商基础设施优势稳固，数据泄露不改行业格局，但修复品牌信誉需要时间。
+</div>
+
+<div class="footer">
+  Coupang (CPNG) 每日简报 &middot; 2026-02-10 &middot; 仅供参考，不构成投资建议
+</div>
+
+</body>
+</html>
