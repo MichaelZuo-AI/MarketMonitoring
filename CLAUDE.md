@@ -4,49 +4,46 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-World News Summarizer — a full-stack AI-powered news aggregation app with intelligent summarization and multi-language support (English/Chinese). No database; all data is fetched fresh per request.
+**CPNG RSU Monitor** — A Next.js 15 app for monitoring Coupang (CPNG) stock and news with AI-powered RSU strategy analysis. Uses a 3-agent architecture (Sourcing, Brain, Chat) powered by the Claude API.
 
 ## Commands
 
-### Backend (run from `backend/`)
-```bash
-# Activate virtualenv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start dev server (port 8001)
-uvicorn main:app --reload --host 0.0.0.0 --port 8001
-```
-
-### Frontend (run from `frontend/`)
 ```bash
 npm install        # Install dependencies
-npm run dev        # Start Vite dev server (port 5173, proxies /api/* to :8001)
+npm run dev        # Start dev server (port 3000)
 npm run build      # Production build
 npm run lint       # ESLint
-npm run preview    # Preview production build
+npm start          # Start production server
 ```
 
 ### No test suite exists yet
-Backend would use `pytest`, frontend would use `vitest`.
+Would use `vitest` for testing.
 
 ## Architecture
 
-**Backend:** Python FastAPI (`backend/main.py`) with two services:
-- `services/feed_service.py` — Aggregates RSS feeds via `feedparser`, organized by category (Global Markets, Technology, Geopolitics, Crypto, Startups). When language != English, batch-translates all headlines in a single Gemini call to minimize API quota usage.
-- `services/gemini_service.py` — Google GenAI wrapper. Primary model: `gemma-3-27b-it`, fallback: `gemini-2.0-flash-lite`. Provides `summarize()` (3-sentence summaries) and `translate_batch()`.
+**Stack:** Next.js 15 + TypeScript + Tailwind CSS v4 + Claude API (Anthropic SDK)
 
-**Frontend:** React 19 + Vite (`frontend/src/App.jsx` is the single main component). Uses Tailwind CSS v4 with glassmorphism dark theme. API client in `frontend/src/api.js` hits three endpoints: `GET /api/news`, `POST /api/summarize`, `GET /api/config`.
+### 3-Agent System
+1. **Sourcing Agent** (`/api/news`) — Fetches RSS feeds, validates freshness (<48h), deduplicates, categorizes (coupang/market/tech)
+2. **Brain Agent** (`/api/analyze`, `/api/briefing`) — Analyzes articles against RSU position, gives sentiment + recommendation (hold/sell/accumulate)
+3. **Chat Agent** (`/api/chat`) — Interactive streaming chat with full context of RSU position + news + analysis
 
-**API Endpoints (backend/main.py):**
-- `GET /api/news?category=&language=` — Fetch articles from RSS feeds, optionally translated
-- `POST /api/summarize` `{text, language}` — AI-generated 3-sentence summary
-- `GET /api/config` — Returns current AI model name
+### Key Files
+- `src/lib/types.ts` — All TypeScript interfaces
+- `src/lib/rsu-profile.ts` — Hardcoded RSU position data + employee tax profile
+- `src/lib/feeds.ts` — RSS fetching + freshness validation
+- `src/lib/stock.ts` — Yahoo Finance wrapper (CPNG quote, 60s cache)
+- `src/lib/claude.ts` — Anthropic SDK wrapper with 3 prompt profiles
+- `src/components/Dashboard.tsx` — Main client orchestrator
+- `src/app/api/` — 5 route handlers (news, stock, analyze, briefing, chat)
 
-**Vite proxy:** `frontend/vite.config.js` proxies `/api/*` to `http://127.0.0.1:8001`.
+### API Routes
+- `GET /api/news?category=` — Fetch + filter articles
+- `GET /api/stock` — CPNG quote (cached 60s)
+- `POST /api/analyze` `{title, snippet, source, category}` — Single article analysis
+- `POST /api/briefing` `{articles[]}` — Portfolio-level briefing
+- `POST /api/chat` `{messages[], newsContext, analysisContext}` — Streaming chat
 
 ## Environment
 
-Backend requires `GOOGLE_API_KEY` in `backend/.env` (Google Cloud API key with Generative AI access).
+Requires `ANTHROPIC_API_KEY` in `.env.local`.

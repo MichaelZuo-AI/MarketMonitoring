@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-feedparser
-newspaper3k
-google-genai
-python-dotenv
-requests
-beautifulsoup4
