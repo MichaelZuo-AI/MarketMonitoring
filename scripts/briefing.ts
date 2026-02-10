@@ -6,7 +6,7 @@ import { generateClaudePrompt } from "../src/lib/export";
 
 async function main() {
   const now = new Date();
-  const date = now.toISOString().slice(0, 10);
+  const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
   const time = now.toTimeString().slice(0, 5).replace(":", "");
 
   console.log("Fetching CPNG stock quote...");
