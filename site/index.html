@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CPNG 每日简报 — 2026年2月11日</title>
+<title>CPNG 每日简报 — 2026年2月11日(晚间更新)</title>
 <style>
   :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8; --green: #4ade80; --red: #f87171; --yellow: #fbbf24; --blue: #60a5fa; --purple: #c084fc; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,57 +20,72 @@
   .price-header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
   .price { font-size: 2rem; font-weight: 700; }
   .change { font-size: 1.1rem; color: var(--red); }
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 12px 0; }
-  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
-  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; }
-  .stat-value { font-size: 1.3rem; font-weight: 700; margin-top: 2px; }
   .summary-box { background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(192,132,252,0.1)); border: 1px solid rgba(96,165,250,0.3); border-radius: 12px; padding: 20px; margin-top: 20px; }
   .risk-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
   .risk-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
   .risk-high { background: var(--red); }
   .risk-med { background: var(--yellow); }
   .risk-low { background: var(--blue); }
-  .news-item { border-left: 3px solid var(--border); padding-left: 12px; margin-bottom: 12px; }
-  .news-item.neg { border-left-color: var(--red); }
-  .news-item.pos { border-left-color: var(--green); }
-  .news-item.neu { border-left-color: var(--yellow); }
-  .news-source { font-size: 0.75rem; color: var(--muted); }
   ul { padding-left: 20px; }
   li { margin-bottom: 4px; }
   .analyst-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .new-badge { background: rgba(192,132,252,0.2); color: var(--purple); padding: 1px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 6px; }
+  .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+  .stat-pill { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 0.9rem; }
   @media (max-width: 600px) { .analyst-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <h1>Coupang (CPNG) 每日简报</h1>
-<p class="subtitle">2026年2月11日 | 数据截至 2月10日收盘后</p>
+<p class="subtitle">2026年2月11日 19:14 KST | 美股盘前 | 晚间更新</p>
 
 <div class="price-header">
   <span class="price">$18.25</span>
-  <span class="change">-$0.29 (-1.56%)</span>
-  <span style="color:var(--muted); font-size:0.9rem;">成交量: 16.6M</span>
+  <span class="change">-$0.29 (-1.56%) 昨收</span>
+</div>
+<div class="stat-row">
+  <span class="stat-pill">成交量: 16.8M</span>
+  <span class="stat-pill">KOSPI: +1.0%（连涨3天）</span>
+  <span class="stat-pill">韩国出口: +44.4%</span>
 </div>
 
 <h2>今日核心新闻</h2>
 
 <div class="card">
-  <h3>数据泄露：3,360万用户信息泄露，政府定性"史上最严重" <span class="sentiment bearish">看跌</span></h3>
-  <p>韩国科学技术信息通信部与个人信息保护委员会（PIPC）联合调查结果正式公布：Coupang数据泄露影响 <strong>3,360万用户账户</strong>，远超最初公布数字。泄露内容不仅包括基本个人信息，还包括 <strong>订单历史、配送数据、入门密码</strong> 等敏感信息。</p>
-  <p style="margin-top:8px;">调查认定泄露源于"管理失职"而非外部攻击。Bloomberg报道称Coupang员工曾阻挠调查。Coupang Inc.（母公司）公开抗议调查结论，称报告遗漏了关键信息。</p>
-  <p style="color:var(--red); margin-top:8px;"><strong>关键:</strong> 新出台的《无过错数据责任法案》瞄准历史泄露事件，可能对Coupang产生追溯性影响。</p>
+  <h3>数据泄露新进展：数据疑似外传中国 <span class="sentiment bearish">看跌</span> <span class="new-badge">NEW</span></h3>
+  <p>매일경제报道揭示全新角度：<strong>Coupang泄露数据是否已被传送至中国</strong>成为调查焦点。由于涉事中国籍员工无法被直接讯问，调查可能永远无法查清数据去向。</p>
+  <p style="margin-top:8px;">韩国科学技术部长亲自反驳Coupang此前的抗议声明，捍卫联合调查结论。Hankyoreh连发4篇深度报道：</p>
+  <ul>
+    <li>泄露源于管理层疏忽，非黑客攻击</li>
+    <li>Coupang故意淡化泄露规模，加剧受害者混乱</li>
+    <li>手机号、地址、门禁密码全部泄露</li>
+    <li>配送信息被访问高达1.4亿次</li>
+  </ul>
+  <p style="color:var(--red); margin-top:8px;"><strong>关键：</strong>数据外传中国的叙事将事件从"商业数据泄露"升级为潜在的"国家安全事件"，风险级别质变。</p>
 </div>
 
 <div class="card">
-  <h3>美韩贸易摩擦：Coupang成焦点 <span class="sentiment bearish">看跌</span></h3>
-  <p>美国众议院对Coupang展开调查，美方指控韩国对Coupang存在"歧视性政策"，威胁加征关税。Politico曝出Coupang在华盛顿进行"非常激进"的游说活动，雇用多家游说公司打造"美国公司"形象。</p>
-  <p style="margin-top:8px;">韩国反对党抗议美国传票中提及总统李姓名。Coupang同时面临韩国国内"到底是韩国公司还是美国公司"的身份争议。</p>
-  <p style="color:var(--yellow); margin-top:8px;"><strong>关键:</strong> 无论贸易谈判结果如何，Coupang已被推到中美韩三角关系的敏感位置，地缘政治风险上升。</p>
+  <h3>Coupang争端上升至美韩同盟层面 <span class="sentiment bearish">看跌</span> <span class="new-badge">NEW</span></h3>
+  <p>조선일보："Coupang争端撕裂美韩同盟"。前NSC主任警告调查可能引发美韩贸易摩擦。Hankyoreh质问：数据泄露调查结果出炉后，美国是否还会继续以Coupang为筹码施压首尔？</p>
+  <p style="margin-top:8px;">한겨레社论直言：Coupang在华盛顿的游说不会帮它赢回韩国消费者的信任。</p>
+  <p style="color:var(--yellow); margin-top:8px;"><strong>关键：</strong>Coupang已从商业争议升级为外交事件，任何方向的决策都可能产生非线性股价影响。</p>
 </div>
 
 <div class="card">
-  <h3>集体诉讼密集推进，截止日临近 <span class="sentiment bearish">看跌</span></h3>
-  <p>至少5家律所（Hagens Berman、Rosen、Bernstein Liebhard、Bronstein Gewirtz、Portnoy等）已发起证券集体诉讼。<strong>原告首席截止日期为2月17日（下周一）</strong>。诉讼基于数据泄露事件导致的投资者损失。</p>
+  <h3>严格责任数据泄露法案正式提出 <span class="sentiment bearish">看跌</span> <span class="new-badge">NEW</span></h3>
+  <p>조선일보独家：韩国正式提出<strong>《严格责任（Strict Liability）》数据泄露法案</strong>。核心变化：无需证明企业过错即可追究赔偿责任，且<strong>追溯适用于历史泄露事件</strong>。</p>
+  <p style="color:var(--red); margin-top:8px;"><strong>关键：</strong>如果通过，Coupang面临的不是"可能被罚款"而是"确定性赔偿"。3,360万用户×赔偿标准=潜在天文数字。</p>
+</div>
+
+<div class="card">
+  <h3>2月17日法律截止日迫近 <span class="sentiment bearish">看跌</span></h3>
+  <p>Coupang Inc.正式发布2月17日申请通知（GlobeNewswire）。至少5家律所推进的集体诉讼原告首席截止日同日。<strong>下周一将是法律风险集中爆发点。</strong></p>
+</div>
+
+<div class="card">
+  <h3>CPNG持续显著弱于大盘 <span class="sentiment bearish">看跌</span></h3>
+  <p>Yahoo Finance专文："CPNG跌幅显著超过大盘"。今日KOSPI在连涨3天后收涨1%，韩国前10天出口暴增44.4%。但CPNG完全脱离大盘走势，说明市场正在单独给Coupang定价公司特异性风险。</p>
 </div>
 
 <h2>分析师观点</h2>
@@ -79,33 +94,32 @@
   <div class="card">
     <h3 style="color:var(--green);">花旗 (Citi)</h3>
     <p>首次覆盖，<strong>买入</strong>评级<br>目标价: <strong>$24.00</strong> (+31.5%)</p>
-    <p style="font-size:0.85rem; color:var(--muted); margin-top:6px;">看好Coupang在韩国电商的长期主导地位</p>
+    <p style="font-size:0.85rem; color:var(--muted); margin-top:6px;">看好韩国电商长期主导地位</p>
   </div>
   <div class="card">
     <h3 style="color:var(--red);">Bernstein</h3>
-    <p>首次覆盖，<strong>Underperform</strong> 评级<br>目标价: <strong>$17.00</strong> (-6.8%)</p>
-    <p style="font-size:0.85rem; color:var(--muted); margin-top:6px;">担忧竞争加剧和盈利能力天花板</p>
+    <p>首次覆盖，<strong>Underperform</strong><br>目标价: <strong>$17.00</strong> (-6.8%)</p>
+    <p style="font-size:0.85rem; color:var(--muted); margin-top:6px;">担忧竞争加剧和盈利天花板</p>
   </div>
 </div>
-<p style="color:var(--muted); font-size:0.85rem; margin-top:6px;">两大机构首次覆盖观点截然相反，反映市场对Coupang前景的深度分歧。</p>
 
-<h2>竞争格局变化</h2>
+<h2>韩国科技 & 宏观亮点</h2>
 
 <div class="card">
-  <h3>大型商超解禁凌晨配送 <span class="sentiment bearish">看跌</span></h3>
-  <p>韩国政府宣布将取消实施14年的大型商超通宵配送禁令。乐天玛特、E-Mart等传统零售商将能推出凌晨配送服务，直接挑战Coupang"火箭配送"的核心壁垒。消息公布后零售股集体上涨。</p>
+  <h3>Samsung宣布"We're Back"，HBM4获客户正面反馈 <span class="sentiment bullish">看涨(大盘)</span></h3>
+  <p>Samsung高管在Semicon Korea 2026宣布HBM4良率达标、本月开始出货，客户反馈积极。Samsung股价应声反弹。ByteDance正与Samsung洽谈AI芯片代工合作。OpenAI、Samsung SDS、SK Telecom确认<strong>3月开始在韩国建设数据中心</strong>。</p>
+  <p style="color:var(--green); margin-top:6px;">韩国AI半导体生态系统持续强化，但对CPNG无直接提振。</p>
 </div>
 
 <div class="card">
-  <h3>Kurly推出午夜配送 <span class="sentiment neutral">中性</span></h3>
-  <p>生鲜电商Kurly推出午夜配送服务，进一步加剧配送速度竞争。虽然Kurly体量远小于Coupang，但信号意义在于：快速配送不再是Coupang的独占领域。</p>
-</div>
-
-<h2>韩国市场大环境</h2>
-
-<div class="card">
-  <p>KOSPI在周一大涨4.1%后周二趋于平稳，收于5,298附近。AI半导体热潮推动Samsung和SK hynix上涨。中国富豪涌入韩国股市，称"难以置信地便宜"。韩国ETF在全球资金流入排名中名列前茅。</p>
-  <p style="margin-top:8px;">但<strong>CPNG独立于大盘走弱</strong>——受数据泄露和诉讼拖累，在KOSPI创新高的背景下逆势下跌1.56%，与大盘的背离显示市场对Coupang的特异性风险定价。</p>
+  <h3>韩国宏观数据强劲 <span class="sentiment bullish">看涨(大盘)</span></h3>
+  <ul>
+    <li>KOSPI连涨3天，今日+1%</li>
+    <li>2月前10天出口同比+44.4%（芯片需求驱动）</li>
+    <li>KB Financial首次突破面值，银行股重估信号</li>
+    <li>亚洲股市整体上涨（美国零售数据疲软→降息预期）</li>
+  </ul>
+  <p style="color:var(--muted); margin-top:6px;">宏观环境友好，但CPNG已脱钩大盘，独立受公司风险驱动。</p>
 </div>
 
 <h2>本周关键风险</h2>
@@ -113,34 +127,34 @@
 <div class="card">
   <div class="risk-item">
     <div class="risk-dot risk-high"></div>
-    <div><strong>诉讼截止日（2/17）</strong>— 下周一股东集体诉讼原告首席截止日，本周媒体报道将持续增加</div>
+    <div><strong>数据外传中国调查</strong>— 国安级风险升级，后果可能远超商业处罚</div>
   </div>
   <div class="risk-item">
     <div class="risk-dot risk-high"></div>
-    <div><strong>PIPC正式处罚</strong>— 数据泄露联合调查已出结论，正式罚款和整改令即将到来</div>
+    <div><strong>2月17日法律截止日</strong>— 集体诉讼+Coupang正式申请，下周一是法律风险集中爆发点</div>
   </div>
   <div class="risk-item">
     <div class="risk-dot risk-high"></div>
-    <div><strong>无过错数据责任法案</strong>— 如果立法推进，Coupang可能面临追溯性赔偿责任</div>
+    <div><strong>严格责任法案</strong>— 追溯适用的数据泄露赔偿立法，如通过影响巨大</div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-dot risk-high"></div>
+    <div><strong>政府立场强硬化</strong>— 科技部长亲自反驳Coupang，信号明确</div>
   </div>
   <div class="risk-item">
     <div class="risk-dot risk-med"></div>
-    <div><strong>美韩贸易谈判</strong>— Coupang已成为双边贸易争端的谈判筹码</div>
-  </div>
-  <div class="risk-item">
-    <div class="risk-dot risk-med"></div>
-    <div><strong>配送竞争加剧</strong>— 大型商超+Kurly同时发力，快速配送竞争白热化</div>
+    <div><strong>美韩同盟裂痕</strong>— Coupang争端已上升至外交层面</div>
   </div>
 </div>
 
 <h2>短期展望</h2>
 
 <div class="summary-box">
-  <p><strong>短期偏空，多重利空叠加。</strong>Coupang正同时面对"史上最严重"数据泄露、多起集体诉讼、美韩贸易摩擦以及竞争格局恶化四大压力，在KOSPI创新高的背景下逆势走弱。虽然Citi的$24目标价和买入评级提供了一些长期信心，但短期内负面催化剂密集，股价大概率继续承压。</p>
-  <p style="margin-top:10px;">下周一（2/17）的诉讼截止日和即将到来的PIPC罚款将是近期最重要的节点。建议密切关注数据泄露责任法案的立法进展以及美韩贸易谈判动态。</p>
+  <p><strong>风险在今日进一步升级。</strong>相比早间，三个新发展显著恶化了CPNG短期前景：数据疑似外传中国（从商业处罚升级为国安审查）、严格责任法案正式提出（确定性赔偿）、科技部长亲自反驳Coupang抗议（政府态度强硬化）。Coupang在KOSPI强势上涨的背景下持续走弱，市场正在对其单独定价。</p>
+  <p style="margin-top:10px;">下周一（2/17）的法律截止日将是短期最重要的催化剂。在此之前，预计股价继续承压，波动性可能加大。唯一的积极信号是Citi的$24买入评级，但在当前密集的负面催化剂面前，机构多头也面临压力。</p>
 </div>
 
-<p style="color:var(--muted); font-size:0.75rem; margin-top:24px; text-align:center;">本简报由 AI 自动生成，不构成投资建议。数据来源：Google News, Yahoo Finance, Korea Herald | 2026-02-11</p>
+<p style="color:var(--muted); font-size:0.75rem; margin-top:24px; text-align:center;">本简报由 AI 自动生成，不构成投资建议。数据来源：Google News, Yahoo Finance, Korea Herald, Hankyoreh | 2026-02-11 19:14 KST</p>
 
 </body>
 </html>
