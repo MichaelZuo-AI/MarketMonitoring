@@ -14,7 +14,7 @@ npm run dev        # Start dev server (port 3000)
 npm run build      # Production build
 npm run lint       # ESLint
 npm test           # Run vitest (39 tests, 6 suites)
-npm run briefing   # Fetch news + stock, save markdown to briefings/
+npm run briefing   # Fetch news + stock, save markdown to briefings/personal/
 ```
 
 ## Daily Workflow
@@ -27,11 +27,11 @@ npm run briefing
 ### Step 2: Generate reports
 In Claude Code, say:
 ```
-Read briefings/<today's file>.md and analyze my RSU position
+Read briefings/personal/<today's file>.md and analyze my RSU position
 ```
-Claude Code generates two HTML files in `briefings/`:
-- `*-personal.html` — RSU tranche analysis, sell/hold recs, tax strategy (private, Chinese)
-- `*-public.html` — Coupang news + stock forecast (shareable, Chinese, no RSU data)
+Claude Code generates HTML reports in two folders:
+- `briefings/personal/*-personal.html` — RSU tranche analysis, sell/hold recs, tax strategy (private, Chinese)
+- `briefings/public/*-public.html` — Coupang news + stock forecast (shareable, Chinese, no RSU data)
 
 ### Step 3: Publish to GitHub Pages
 Claude Code copies the public HTML to `site/index.html`, then:

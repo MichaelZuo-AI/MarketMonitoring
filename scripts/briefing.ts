@@ -21,15 +21,15 @@ async function main() {
 
   const prompt = generateClaudePrompt(articles, quote);
 
-  const dir = join(process.cwd(), "briefings");
+  const dir = join(process.cwd(), "briefings", "personal");
   mkdirSync(dir, { recursive: true });
 
   const filepath = join(dir, `${date}-${time}.md`);
   writeFileSync(filepath, prompt, "utf-8");
 
-  console.log(`\nBriefing saved to: briefings/${date}-${time}.md`);
+  console.log(`\nBriefing saved to: briefings/personal/${date}-${time}.md`);
   console.log(
-    `\nAsk Claude Code: "Read briefings/${date}-${time}.md and analyze my RSU position"`
+    `\nAsk Claude Code: "Read briefings/personal/${date}-${time}.md and analyze my RSU position"`
   );
 }
 
